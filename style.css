@@ -1,0 +1,158 @@
+body{
+    background-image: url("images/bg2.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+}
+h1{
+    margin-left: 2rem;
+    font-size: 40px; 
+}
+
+.main-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* input  area */
+#input-div{
+    width: 35%;
+    margin: 4rem;
+    min-width: 150px; 
+}
+
+input {
+    display: block;
+    width: 80%;
+    font-size: 20px;
+    margin-bottom: 1rem;
+    border-radius:  30px 12px;
+    border-style: none;
+    padding: 20px;
+    outline: none;
+    opacity: 0.4;
+}
+
+button{
+    margin: 5px 5px;
+    border-radius: 20px 10px;
+    padding: 5px 20px;
+    border-style: none;
+    outline: none;
+    opacity: 0.8;
+}
+
+/* main weather */
+.city-data{
+    font-size: 30px;
+}
+
+.as-of{
+    font-size: 20px;    
+}
+#temperature{
+    font-size: 140px;
+    margin-left: -15px;
+    font-weight: bold;
+}
+#deg-celci {
+    font-size: 90px;
+}
+
+#feels-like{
+    font-size: 17px;
+}
+
+.temp-feel{
+    font-size: 30px;
+}
+
+.img-description{
+    float: right;
+    width: 25%;
+    height: 20vh;
+    margin-left: 10%;
+    opacity: 0.5;
+}
+
+
+.country{
+    background-color:rgba(204, 197, 197, 0.2);
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.main-weather {
+    margin-left: 11%;
+    margin-top: -1%;
+    width: 35%;
+    padding: 0.5rem 2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    min-width: 200px;
+}
+
+/* weather description  */
+ .description-style{
+    font-size: 30px;
+}
+
+/* clone divs */
+.weather-des{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+ 
+.clone-spans{
+    margin-left: 100px;
+    opacity: 0.8;
+}
+
+.clone-divs {
+    margin: 3rem 3rem;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.para{
+
+    margin-left: 40px;
+    opacity: 0.8;
+}
+
+.weather-icon{
+    float: left;
+    width: 32px;
+    margin: 15px 0 0;
+}
+
+
+@media(max-width: 900px){
+
+    .main-weather{
+        margin: auto;
+    }
+    
+    .clone-divs {
+        margin: 2rem auto;
+        width: auto;
+    }
+   
+    #input-div {
+        text-align: center;
+        margin: 4rem auto;
+    }
+
+    .clone-spans{
+        margin-left: 2px;
+    }
+}
+
+
+
