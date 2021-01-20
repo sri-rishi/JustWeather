@@ -1,3 +1,4 @@
+
 body{
     background-image: url("images/bg2.jpg");
     background-attachment: fixed;
@@ -121,7 +122,6 @@ button{
 }
 
 .para{
-
     margin-left: 40px;
     opacity: 0.8;
 }
@@ -130,6 +130,16 @@ button{
     float: left;
     width: 32px;
     margin: 15px 0 0;
+}
+
+footer {
+    font-style: italic;
+    text-align: center;
+    margin: 2rem auto 1rem;
+}
+
+footer a {
+    text-decoration: none;
 }
 
 

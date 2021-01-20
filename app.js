@@ -10,7 +10,7 @@ var windSpeed = document.querySelector("#wind-speed");
 var visibilityDiv = document.querySelector("#visibility");
 var cityData = document.querySelector("#city-name");
 var cloneDiv= document.querySelectorAll(".description-div");
-
+var footerDiv =document.querySelector("#footer");
 // Setting weather url
 function getWeatherURL(text) {
     var serverURL = "https://api.openweathermap.org/data/2.5/weather?q=" ;
@@ -54,7 +54,7 @@ function clickHandler(event){
             windSpeed.innerHTML = "<img class=\"weather-icon\" src=\"images/wind.png\"><p class='speed para'>Wind Speed<span class='clone-spans'> " + windSpeedNow + " km/h</span></p>";
             visibilityDiv.innerHTML = "<img class=\"weather-icon\" src=\"images/visibility.png\"><p class='visible para'>Visibility <span class='clone-spans'>" + visibilityKM + " km</span></p>";
             weatherImageDiv.innerHTML = "<img class='img-description' src=" + imageURL + icon + ".svg>";
-        
+            footerDiv.innerHTML = "<p>Made by <a href=\"https://rishiportfolio.netlify.app/\">Rishi Srivastava</a>"
             // adding classes to elements
             for(var i=0; i<cloneDiv.length; i++){
                 cloneDiv[i].classList.add("clone-divs");
