@@ -55,6 +55,8 @@ function clickHandler(event){
             visibilityDiv.innerHTML = "<img class=\"weather-icon\" src=\"images/visibility.png\"><p class='visible para'>Visibility <span class='clone-spans'>" + visibilityKM + " km</span></p>";
             weatherImageDiv.innerHTML = "<img class='img-description' src=" + imageURL + icon + ".svg>";
             footerDiv.innerHTML = "<p>Made by <a href=\"https://rishiportfolio.netlify.app/\">Rishi Srivastava</a>"
+
+            
             // adding classes to elements
             for(var i=0; i<cloneDiv.length; i++){
                 cloneDiv[i].classList.add("clone-divs");
