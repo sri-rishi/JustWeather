@@ -36,14 +36,14 @@ const clickHandler = event => {
         fetch(getWeatherURL(inputText))
         .then(response => response.json())
         .then(json => {
-            const icon = json.weather[0].icon;
-            const visibilityKM = Math.round(json.visibility/1000);
-            const weatherDescription =json.weather[0].description;
-            const weatherTemp = Math.round(json.main.temp);
-            const tempFeelLike =  Math.round(json.main.feels_like);
-            const weatherHumidity = json.main.humidity; 
-            const windSpeedNow = Math.round(json.wind.speed);
-            const cityCountry = json.sys.country;
+            let icon = json.weather[0].icon;
+            let visibilityKM = Math.round(json.visibility/1000);
+            let weatherDescription =json.weather[0].description;
+            let weatherTemp = Math.round(json.main.temp);
+            let tempFeelLike =  Math.round(json.main.feels_like);
+            let weatherHumidity = json.main.humidity; 
+            let windSpeedNow = Math.round(json.wind.speed);
+            let cityCountry = json.sys.country;
             
             // updating data into divs
             cityData.innerHTML= "<p class=\"city-data\">" +cityName[0].toUpperCase() + cityName.slice(1)+ "<sup class='country'>"+ cityCountry + "</sup> Weather<br/> <span>as of "+ time + " IST</span><p>";
