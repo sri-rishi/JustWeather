@@ -1,49 +1,49 @@
 // selecting  html elements
-var txtInput = document.querySelector("#txt-input");
-var btnCheck = document.querySelector("#btn-check");
-var weatherImageDiv  = document.querySelector("#weather-image");
-var temperatureDiv = document.querySelector("#temperature");
-var feelsLike = document.querySelector('#feels-like')
-var humidityDiv =document.querySelector("#humidity");
-var descriptionDiv = document.querySelector("#description");
-var windSpeed = document.querySelector("#wind-speed");
-var visibilityDiv = document.querySelector("#visibility");
-var cityData = document.querySelector("#city-name");
-var cloneDiv= document.querySelectorAll(".description-div");
-var footerDiv =document.querySelector("#footer");
+const txtInput = document.querySelector("#txt-input");
+const btnCheck = document.querySelector("#btn-check");
+const weatherImageDiv  = document.querySelector("#weather-image");
+const temperatureDiv = document.querySelector("#temperature");
+const feelsLike = document.querySelector('#feels-like')
+const humidityDiv =document.querySelector("#humidity");
+const descriptionDiv = document.querySelector("#description");
+const windSpeed = document.querySelector("#wind-speed");
+const visibilityDiv = document.querySelector("#visibility");
+const cityData = document.querySelector("#city-name");
+const cloneDiv= document.querySelectorAll(".description-div");
+const footerDiv =document.querySelector("#footer");
 // Setting weather url
-function getWeatherURL(text) {
-    var serverURL = "https://api.openweathermap.org/data/2.5/weather?q=" ;
-    var apiKey = "ce7af20031553e7707065741261ad3f1";
-    var unit = "metric";
+const getWeatherURL = text => {
+    const serverURL = "https://api.openweathermap.org/data/2.5/weather?q=" ;
+    const apiKey = "ce7af20031553e7707065741261ad3f1";
+    const unit = "metric";
     return serverURL + text + "&appid=" + apiKey + "&units=" + unit;
 }
 
 // image URL
-var imageURL = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/";
+const imageURL = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/";
 
 
-function clickHandler(event){
+const clickHandler = event => {
     event.preventDefault();
-    var inputText = txtInput.value; 
-    var cityName = inputText.split(',')[0];
+    let inputText = txtInput.value; 
+    let cityName = inputText.split(',')[0];
     // getting current time
-    var today = new Date();
-    var time = today.getHours() + ":" +today.getMinutes();
+    let today = new Date();
+    let time = today.getHours() + ":" +today.getMinutes();
     
 
         // getting data from api
         fetch(getWeatherURL(inputText))
         .then(response => response.json())
         .then(json => {
-            var icon = json.weather[0].icon;
-            var visibilityKM = Math.round(json.visibility/1000);
-            var weatherDescription =json.weather[0].description;
-            var weatherTemp = Math.round(json.main.temp);
-            var tempFeelLike =  Math.round(json.main.feels_like);
-            var weatherHumidity = json.main.humidity; 
-            var windSpeedNow = Math.round(json.wind.speed);
-            var cityCountry = json.sys.country;
+            let icon = json.weather[0].icon;
+            let visibilityKM = Math.round(json.visibility/1000);
+            let weatherDescription =json.weather[0].description;
+            let weatherTemp = Math.round(json.main.temp);
+            let tempFeelLike =  Math.round(json.main.feels_like);
+            let weatherHumidity = json.main.humidity; 
+            let windSpeedNow = Math.round(json.wind.speed);
+            let cityCountry = json.sys.country;
             
             // updating data into divs
             cityData.innerHTML= "<p class=\"city-data\">" +cityName[0].toUpperCase() + cityName.slice(1)+ "<sup class='country'>"+ cityCountry + "</sup> Weather<br/> <span>as of "+ time + " IST</span><p>";
@@ -58,7 +58,7 @@ function clickHandler(event){
 
             
             // adding classes to elements
-            for(var i=0; i<cloneDiv.length; i++){
+            for(let i=0; i<cloneDiv.length; i++){
                 cloneDiv[i].classList.add("clone-divs");
             }
             visibilityDiv.classList.add("visibility-style");
