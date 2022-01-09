@@ -16,7 +16,7 @@ const getWeatherURL = text => {
     const serverURL = "https://api.openweathermap.org/data/2.5/weather?q=" ;
     const apiKey = "ce7af20031553e7707065741261ad3f1";
     const unit = "metric";
-    return `${serverURL}${text}&appid=${apiKey}&units=${unit}`;
+    return serverURL + text + "&appid=" + apiKey + "&units=" + unit;
 }
 
 // image URL
